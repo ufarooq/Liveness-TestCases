@@ -1,49 +1,48 @@
-**************************** test1 *****************************
 --------------------- Basic Block: while.end--------------------- 
 --------------------- Basic Block: if.end--------------------- 
   %add = add nsw i32 %c, 11
   %mul = mul nsw i32 %f, %e
-i32 %c
+  %b.addr.1 = phi i32 [ %add3, %if.then ], [ %b.addr.0, %if.else ]
   %mul1 = mul nsw i32 %b.addr.0, %c
-  %b.addr.0 = phi i32 [ %mul, %entry ], [ %b.addr.1, %if.end ]
 i32 1
   %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
 --------------------- Basic Block: if.else--------------------- 
   %add = add nsw i32 %c, 11
   %mul = mul nsw i32 %f, %e
-i32 %c
-  %mul1 = mul nsw i32 %b.addr.0, %c
   %b.addr.0 = phi i32 [ %mul, %entry ], [ %b.addr.1, %if.end ]
+  %mul1 = mul nsw i32 %b.addr.0, %c
 i32 1
   %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
 --------------------- Basic Block: if.then--------------------- 
   %add = add nsw i32 %c, 11
   %mul = mul nsw i32 %f, %e
-i32 %c
-  %mul1 = mul nsw i32 %b.addr.0, %c
   %b.addr.0 = phi i32 [ %mul, %entry ], [ %b.addr.1, %if.end ]
+  %mul1 = mul nsw i32 %b.addr.0, %c
 i32 1
+  %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
 --------------------- Basic Block: while.body--------------------- 
   %add = add nsw i32 %c, 11
   %mul = mul nsw i32 %f, %e
-i32 %c
   %b.addr.0 = phi i32 [ %mul, %entry ], [ %b.addr.1, %if.end ]
+  %mul1 = mul nsw i32 %b.addr.0, %c
 i32 1
   %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
 --------------------- Basic Block: while.cond--------------------- 
   %add = add nsw i32 %c, 11
   %mul = mul nsw i32 %f, %e
-i32 %c
-  %mul1 = mul nsw i32 %b.addr.0, %c
-  %b.addr.1 = phi i32 [ %add3, %if.then ], [ %b.addr.0, %if.else ]
+  %b.addr.0 = phi i32 [ %mul, %entry ], [ %b.addr.1, %if.end ]
 i32 1
   %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
 --------------------- Basic Block: entry--------------------- 
-i32 11
-i32 %c
-i32 %e
-i32 %f
-  %mul1 = mul nsw i32 %b.addr.0, %c
+  %add = add nsw i32 %c, 11
+  %mul = mul nsw i32 %f, %e
   %b.addr.1 = phi i32 [ %add3, %if.then ], [ %b.addr.0, %if.else ]
+  %mul1 = mul nsw i32 %b.addr.0, %c
 i32 1
   %add3 = add nsw i32 %b.addr.0, 1
+i32 %c
