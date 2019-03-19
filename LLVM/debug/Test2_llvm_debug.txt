@@ -1,0 +1,170 @@
+**************************** test2 *****************************
+--------------------- Basic Block: while.end--------------------- 
+--------------------- Basic Block: if.end5--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+i32 510
+i32 100
+i32 231
+i32 200
+i32 210
+  %d.addr.1 = phi i32 [ 101, %if.then3 ], [ %d.addr.0, %if.else ]
+i32 101
+i32 12000
+  %c.addr.1 = phi i32 [ %c.addr.0, %if.then3 ], [ 12000, %if.else ]
+i32 2200
+--------------------- Basic Block: if.else4--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+i32 510
+i32 100
+i32 231
+i32 200
+i32 210
+  %d.addr.1 = phi i32 [ 101, %if.then3 ], [ %d.addr.0, %if.else ]
+i32 101
+i32 12000
+  %c.addr.1 = phi i32 [ %c.addr.0, %if.then3 ], [ 12000, %if.else ]
+i32 2200
+--------------------- Basic Block: if.end--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+  %d.addr.0 = phi i32 [ %d, %entry ], [ %d.addr.2, %if.end5 ]
+i32 510
+  %c.addr.0 = phi i32 [ %c, %entry ], [ %c.addr.2, %if.end5 ]
+i32 100
+i32 231
+i32 200
+i32 210
+i32 101
+i32 12000
+i32 2200
+--------------------- Basic Block: if.else--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+  %d.addr.0 = phi i32 [ %d, %entry ], [ %d.addr.2, %if.end5 ]
+i32 510
+  %c.addr.0 = phi i32 [ %c, %entry ], [ %c.addr.2, %if.end5 ]
+i32 100
+i32 231
+i32 200
+i32 210
+i32 101
+i32 12000
+i32 2200
+--------------------- Basic Block: if.then3--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+  %d.addr.0 = phi i32 [ %d, %entry ], [ %d.addr.2, %if.end5 ]
+i32 510
+  %c.addr.0 = phi i32 [ %c, %entry ], [ %c.addr.2, %if.end5 ]
+i32 100
+i32 231
+i32 200
+i32 210
+i32 101
+i32 12000
+i32 2200
+--------------------- Basic Block: if.then--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+  %d.addr.0 = phi i32 [ %d, %entry ], [ %d.addr.2, %if.end5 ]
+i32 510
+  %c.addr.0 = phi i32 [ %c, %entry ], [ %c.addr.2, %if.end5 ]
+i32 100
+i32 231
+i32 200
+i32 210
+i32 101
+i32 12000
+i32 2200
+--------------------- Basic Block: while.body--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %i.addr.0 = phi i32 [ %i, %entry ], [ %add7, %if.end5 ]
+i32 2544
+  %d.addr.0 = phi i32 [ %d, %entry ], [ %d.addr.2, %if.end5 ]
+i32 510
+  %c.addr.0 = phi i32 [ %c, %entry ], [ %c.addr.2, %if.end5 ]
+i32 100
+i32 231
+i32 200
+i32 210
+  %d.addr.1 = phi i32 [ 101, %if.then3 ], [ %d.addr.0, %if.else ]
+i32 101
+i32 12000
+  %c.addr.1 = phi i32 [ %c.addr.0, %if.then3 ], [ 12000, %if.else ]
+i32 2200
+--------------------- Basic Block: while.cond--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %d.addr.2 = phi i32 [ %d.addr.1, %if.end ], [ 2200, %if.else4 ]
+i32 2544
+  %c.addr.2 = phi i32 [ %c.addr.1, %if.end ], [ 2544, %if.else4 ]
+i32 510
+i32 100
+i32 231
+i32 200
+i32 210
+  %d.addr.1 = phi i32 [ 101, %if.then3 ], [ %d.addr.0, %if.else ]
+i32 101
+i32 12000
+  %c.addr.1 = phi i32 [ %c.addr.0, %if.then3 ], [ 12000, %if.else ]
+i32 2200
+  %add7 = add nsw i32 %i.addr.0, 1
+--------------------- Basic Block: entry--------------------- 
+i32 1
+i32 %c
+i32 %d
+i32 %i
+i32 20
+  %d.addr.2 = phi i32 [ %d.addr.1, %if.end ], [ 2200, %if.else4 ]
+i32 2544
+  %c.addr.2 = phi i32 [ %c.addr.1, %if.end ], [ 2544, %if.else4 ]
+i32 510
+i32 100
+i32 231
+i32 200
+i32 210
+  %d.addr.1 = phi i32 [ 101, %if.then3 ], [ %d.addr.0, %if.else ]
+i32 101
+i32 12000
+  %c.addr.1 = phi i32 [ %c.addr.0, %if.then3 ], [ 12000, %if.else ]
+i32 2200
+  %add7 = add nsw i32 %i.addr.0, 1
